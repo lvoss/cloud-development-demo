@@ -22,13 +22,13 @@ components:
     volumeMounts:
     - name: m2
       path: /home/user/.m2    
-    - name: bash-history
+    - name: bash-history-mount
       path: /home/user/.history-mount
   name: tools
 - name: m2
   volume:
     size: 3Gi
-- name: bash-history
+- name: bash-history-mount
   volume:
     size: 512Mi
     
