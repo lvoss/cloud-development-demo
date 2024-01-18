@@ -14,16 +14,23 @@ components:
     env:
     - name: DEBUG_PORT
       value: "5858"
+    - name: HISTFILE
+      value: /home/$USER/.history-mount/.bash_history
     image: quay.io/devfile/universal-developer-image:ubi8-latest
     memoryLimit: 768Mi
     mountSources: true
     volumeMounts:
     - name: m2
-      path: /home/user/.m2
+      path: /home/user/.m2    
+    - name: bash-history
+      path: /home/user/.history-mount
   name: tools
 - name: m2
   volume:
     size: 3Gi
+- name: bash-history
+  volume:
+    size: 512Mi
     
 
 commands:
