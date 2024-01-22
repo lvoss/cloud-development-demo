@@ -25,6 +25,21 @@ components:
     - name: bash-history-mount
       path: /home/user/.history-mount
   name: tools
+- name: postgres
+  container:
+    image: registry.redhat.io/rhel8/postgresql-12
+    memoryLimit: 512Mi
+    env:
+      - name: POSTGRESQL_USER
+        value: user
+      - name: POSTGRESQL_PASSWORD
+        value: pass
+      - name: POSTGRESQL_DATABASE
+        value: db
+    endpoints:
+      - name: postgres
+        targetPort: 5432
+        exposure: none
 - name: m2
   volume:
     size: 3Gi
