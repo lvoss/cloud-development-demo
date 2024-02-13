@@ -1,0 +1,16 @@
+services:
+  demo-postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    container_name: demo-postgres
+    restart: unless-stopped
+    networks: 
+      - cloud-dev-demo
+
+networks:
+  cloud-dev-demo:
+    name: cloud-dev-demo
+    external: true
