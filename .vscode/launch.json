@@ -1,0 +1,11 @@
+
+{"configurations": [
+{
+  "name": "Debug (Attach) app",
+  "type": "java",
+  "request": "attach",
+  "hostName": "localhost",
+  "port": 9009
+}
+]
+}

@@ -25,3 +25,6 @@ replay_pid*
 
 target
 .odo
+
+# Ignore DevSpace cache and log folder
+.devspace/
