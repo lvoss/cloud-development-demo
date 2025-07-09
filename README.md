@@ -5,7 +5,7 @@ This is a simple SpringBoot project that connects to a PostgreSQL database on st
 Different development environments are showcased in separate branches:
 
 - [DevContainers setup](https://github.com/lvoss/cloud-development-demo/tree/env-devcontainers)
-- [GitHub Codespaces setup](https://github.com/lvoss/cloud-development-demo/tree/env-codespaces)
+- [GitHub Codespaces setup](https://github.com/lvoss/cloud-development-demo/tree/env-github-codespaces)
 - [DevSpace setup](https://github.com/lvoss/cloud-development-demo/tree/env-devspace)
 - [OpenShift DevSpaces setup](https://github.com/lvoss/cloud-development-demo/tree/env-openshift-devspaces)
 
@@ -16,7 +16,8 @@ Please switch to the relevant branch for detailed setup and usage instructions.
 The project demonstrates how to develop and run a SpringBoot application that connects to a Postgres database. It includes multiple development environment setups, each showcased in a separate branch:
 
 - **`main`**: Common source code for the SpringBoot application.
-- **`env-devcontainers`**: Example setup using [DevContainers](https://containers.dev/) or GitHub Codespaces.
+- **`env-devcontainers`**: Example setup using [DevContainers](https://containers.dev/).
+- **`env-github-codespaces`**: Example setup using GitHub Codespaces.
 - **`env-devspace`**: Example setup using [DevSpace](https://devspace.sh/).
 - **`env-openshift-devspaces`**: Example setup using [OpenShift DevSpaces](https://www.openshift.com/blog/introducing-openshift-devspaces).
 
@@ -30,7 +31,10 @@ This SpringBoot app requires a running PostgreSQL database on startup. The provi
   Contains only the SpringBoot source code. You will need to start a Postgres instance manually (e.g., via Docker or locally).
 
 - **`env-devcontainers`**  
-  Use this branch if you want to develop using DevContainers or GitHub Codespaces. It contains configuration files to automatically start a Postgres container and connect your app to it.
+  Use this branch if you want to develop using DevContainers. It contains configuration files to automatically start a Postgres container and connect your app to it.
+
+- **`env-github-codespaces`**  
+  Use this branch if you want to develop using GitHub Codespaces. It contains configuration files to automatically start a Postgres container and connect your app to it.
 
 - **`env-devspace`**  
   This branch demonstrates how to use DevSpace to deploy and run both the SpringBoot application and the Postgres database inside a Kubernetes cluster.
@@ -46,5 +50,6 @@ This SpringBoot app requires a running PostgreSQL database on startup. The provi
 
 ## Requirements
 
-- Docker (for `env-devcontainers` when using Devcontainers)
+- Docker (for `env-devcontainers`)
+- GitHub Access (for `env-github-codespaces`)
 - Kubernetes / OpenShift cluster (for `env-devspace` and `env-openshift-devspaces` branches)
