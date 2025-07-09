@@ -1,11 +1,18 @@
 
 {"configurations": [
-{
-  "name": "Debug (Attach) app",
-  "type": "java",
-  "request": "attach",
-  "hostName": "localhost",
-  "port": 9009
-}
-]
+    {
+      "type": "java",
+      "name": "DemoApplication",
+      "request": "launch",
+      "mainClass": "com.example.demo.DemoApplication",
+      "projectName": "demo"
+    },
+    {
+      "name": "Debug (Attach) app",
+      "type": "java",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 9009
+    }
+  ]
 }
