@@ -1,4 +1,4 @@
-schemaVersion: 2.1.0
+schemaVersion: 2.2.2
 components:
 - container:
     command:
@@ -6,8 +6,9 @@ components:
     - -f
     - /dev/null
     endpoints:
-    - name: http-springboot
+    - name: https-springbt
       targetPort: 8080
+      protocol: https
     - exposure: none
       name: debug
       targetPort: 5858
@@ -16,14 +17,14 @@ components:
       value: "5858"
     - name: HISTFILE
       value: /home/user/.history-mount/.bash_history
-    image: quay.io/devfile/universal-developer-image:ubi8-latest
+    image: registry.access.redhat.com/ubi9/openjdk-17:1.20-2.1721752931
     memoryLimit: 768Mi
     mountSources: true
     volumeMounts:
-    - name: m2
-      path: /home/user/.m2    
-    - name: bash-history-mount
-      path: /home/user/.history-mount
+      - name: m2
+        path: /home/user/.m2    
+      - name: bash-history-mount
+        path: /home/user/.history-mount
   name: tools
 - name: postgres
   container:
@@ -77,7 +78,7 @@ commands:
 
   
 metadata:
-  description: Java application using Spring Boot® and OpenJDK 11
+  description: Java application using Spring Boot® and OpenJDK 17
   displayName: Spring Boot®
   globalMemoryLimit: 2674Mi
   icon: https://raw.githubusercontent.com/devfile-samples/devfile-stack-icons/main/spring.svg
